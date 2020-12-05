@@ -120,6 +120,6 @@ css
 
 - and how users can continue to scale a website, use the minimum-scale, maximum-scale, initial-scale, and user-scalable properties.
 
-- 
+- Lost over Half of my notes. No save in Github ... gonna start writing my notes in VSCode
 
 

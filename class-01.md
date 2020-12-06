@@ -123,3 +123,55 @@ css
 - Lost over Half of my notes. No save in Github ... gonna start writing my notes in VSCode
 
 
+## Jquery 
+
+- Jquery is a javascript library
+- jquery is accessed through javascript
+
+- With jquery I can do some the things I would do in javascript with smaller amounts of code.
+
+- like 
+```
+var el = document.getElementById("start");
+el.innerHTML = "Go";
+```
+- would be shortned to this is jquery
+
+```
+$("#start").html("Go");
+```
+
+- to start using jquery we need to add it to the html head as a script source.
+
+```
+    <head>
+
+        <title>Page Title</title>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+    </head>
+    
+ ```
+ 
+ - Make sure that the HTML document is fully loaded before working with it 
+ 
+ ```
+ $(document).ready(function() {
+
+   // jQuery code goes here
+});
+
+```
+
+```$``` is used to access the jQuery then accesses the document object 
+    
+    
+- since the code is used almost everytime that you use jQuery, there is a short hand version.
+
+```
+$(function() {
+
+   // jQuery code goes here
+});
+
+```

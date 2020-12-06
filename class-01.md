@@ -187,4 +187,12 @@ $(".demo").hide()  // hides all elements with class="demo"
 $("#demo").hide()  // hides the element with id="demo"
 ```
 
+- you can also select all div elements with a class name of menu
+
+```
+$("div.menu") 
+```
+
+![jQuery selectors](https://api.sololearn.com/DownloadFile?id=3119)
+
 

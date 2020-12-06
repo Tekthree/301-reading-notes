@@ -236,11 +236,17 @@ $( function() {
  
 - you can use ``` val() ``` to set the value or get the value
 
+
 ```
 $(function() {
   alert($("#name").val());
  });
  
  ```
- 
- 
+
+
+- ```text()``` sets or returns the text content of selected elements.
+- ```html()``` sets or returns the content of selected elements (including HTML markup).
+- ```val()``` sets or returns the value of form fields.
+- ```attr()``` sets or returns the value of attributes.
+- ```removeAttr()``` removes the specified attribute

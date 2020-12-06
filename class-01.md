@@ -175,3 +175,16 @@ $(function() {
 });
 
 ```
+
+- jQuery is used to select HTML elements and perform actions on them. 
+
+- the basic syntax is : ``` $("selector").action()```
+
+```
+$("p").hide()  // hides all <p> elements
+
+$(".demo").hide()  // hides all elements with class="demo"
+$("#demo").hide()  // hides the element with id="demo"
+```
+
+

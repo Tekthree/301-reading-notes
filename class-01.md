@@ -196,5 +196,51 @@ $("div.menu")
 - ![jQuery selectors](https://api.sololearn.com/DownloadFile?id=3119)
 
 
+- you can manipulate attributes assigned to HTML elements easily through jQuery
+
+- the ``` attr() ``` method is used for getting the value of an attribute.
+
+```
+$(function() {
+
+  var val = $("a").attr("href");
+
+  alert(val);
+
+});
+// alerts "www.sololearn.com"
+JSTry it Yourself
+
+```
+
+- above will get the value of the href from the a tag
 
 
+- the attr() method allows you to set a value for an attribute by specifying it as the second parameter
+
+```
+$( function() {
+
+  $("a").attr("href", "http://www.jquery.com");
+  });
+  
+ ```
+ 
+ - to remove attributes from an element use the ``` removeAttr() ``` method
+ 
+ ```
+ $("table").removeAttr("border");
+ ```
+ 
+ 
+ 
+- you can use ``` val() ``` to set the value or get the value
+
+```
+$(function() {
+  alert($("#name").val());
+ });
+ 
+ ```
+ 
+ 

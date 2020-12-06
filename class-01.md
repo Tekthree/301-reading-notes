@@ -250,3 +250,13 @@ $(function() {
 - ```val()``` sets or returns the value of form fields.
 - ```attr()``` sets or returns the value of attributes.
 - ```removeAttr()``` removes the specified attribute
+
+- ```append()``` inserts content at the end of the selected elements.
+- ```prepend()``` inserts content at the beginning of the selected elements.
+- ```after()``` inserts content after the selected elements.
+- ```before()``` inserts content before the selected elements.
+
+
+
+
+- adding new elements then text to the element 

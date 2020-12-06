@@ -193,6 +193,8 @@ $("#demo").hide()  // hides the element with id="demo"
 $("div.menu") 
 ```
 
-![jQuery selectors](https://api.sololearn.com/DownloadFile?id=3119)
+- ![jQuery selectors](https://api.sololearn.com/DownloadFile?id=3119)
+
+
 
 

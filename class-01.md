@@ -260,3 +260,195 @@ $(function() {
 
 
 - adding new elements then text to the element 
+
+
+# Manipulating CSS
+
+- The ```addClass()``` method adds one or more classes to the sleected elements.
+
+```
+$("div").addclass("header");
+
+```
+
+- this will add a class to the html div
+
+- the ```removeClass()``` method removes one or more class names from the selected elements. 
+
+```
+$("div").removeClass("red");
+```
+
+- the ```toggleClass()``` method togggles between adding/removing classes from the selected elements.
+
+```
+$(function(){
+  
+  $("button").click(function(){
+
+    $("p").toggleClass("red");
+
+  });
+
+
+
+});
+
+```
+
+# CSS properties
+
+- like the ```html()``` methods, the css() method can be used to get and set CSS property
+
+``` 
+$(function() {
+   alert($("p").css("background-color"));
+
+   $("p").css("background-color", "blue");
+});
+
+```
+
+- the above code alerts the p elements background color then set the background color to blue
+
+- to set mulitple properties we can use JSON syntax
+
+```
+css({"property":"value","property":"value"});
+
+```
+
+``` 
+$("p").css({"color":"red", "font-size": "200%"});
+
+```
+
+- use the ```height()``` and ```width()``` to set height and width of an element
+
+```
+$("div").width(100);
+$("div").height(100);
+
+```
+
+- The width() and height() methods get and set the dimensions without the padding, borders and margins.
+- The innerWidth() and innerHeight() methods also include the padding.
+- The outerWidth() and outerHeight() methods include the padding and borders.
+
+
+# Manipulate Dom
+
+- jQuery makes it easy to traverse the DOM and work with HTML elements
+
+- The ```<html>``` element is the parent of ```<body>``` and an ancestor of everything below it.
+The ```<body>``` element is the parent of the ```<h1>``` and ```<a>``` elements.
+The ```<h1>``` and ```<a>``` elements are child elements of the ```<body>``` element and descendants of ```<html>```.
+The ```<h1>``` and ```<a>``` elements are siblings (they share the same parent).
+
+Summary
+An ancestor is a parent, grandparent, great-grandparent, and so on.
+A descendant is a child, grandchild, great-grandchild, and so on.
+Siblings share the same parent.
+
+- the ```parent()``` method returns the direct parent element of the selected element. 
+
+```
+var e = $("p").parent();
+
+e.css("border", "2px solid red");
+
+```
+
+- the ```parent()``` method can only traverse up one but the ```parents()``` method gets all ancestors of the selected element.
+
+```
+$(function(){
+  var e = $("p").parents();
+  
+  e.css("border", "2px solid red");
+
+});
+
+```
+
+- some of the more used methods for taversals are
+
+![traversal methods](https://api.sololearn.com/DownloadFile?id=3044)
+
+- ``` eq() ``` method can be used to select a specific element from multiple selected elements. The index start at zero so if you want the the third div you would use the number  2
+
+```
+$("div").eq(2);
+```
+
+
+# Removing Elements
+
+- remove selected elements from the DOM using the remove() method
+
+```
+$("p").eq(1).remove();
+
+```
+
+- use the ```empty()``` method to remove all children from a selected element
+
+```
+$("div").empty();
+
+```
+
+## Handling Events
+
+- jQuery provides some effective ways to handle events. 
+
+- When an event occurs on a target element, a handler function is executed.
+
+```
+var x = document.getElementById("demo");
+
+x.onclick = function() {
+  document.body.innerHTML = Date();
+
+} 
+
+```
+
+- the above is Javascrip but to do the same thing in jQuery would be smaller code. 
+
+```
+$("#demo").click(function(){
+  $("body").html(Date());
+});
+
+```
+
+
+# Common Events
+
+- Mouse Events:
+
+  click occurs when an element is clicked.
+  dblclick occurs when an element is double-clicked.
+  mouseenter occurs when the mouse pointer is over (enters) the selected element.
+  mouseleave occurs when the mouse pointer leaves the selected element.
+  mouseover occurs when the mouse pointer is over the selected element.
+
+- Keyboard Events:
+
+  keydown occurs when a keyboard key is pressed down.
+  keyup occurs when a keyboard key is released.
+
+- Form Events:
+
+  submit occurs when a form is submitted.
+  change occurs when the value of an element has been changed.
+  focus occurs when an element gets focus.
+  blur occurs when an element loses focus.
+
+- Document Events:
+
+  ready occurs when the DOM has been loaded.
+  resize occurs when the browser window changes size.
+  scroll occurs when the user scrolls in the specified element. 
+

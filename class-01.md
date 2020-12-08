@@ -452,3 +452,109 @@ $("#demo").click(function(){
   resize occurs when the browser window changes size.
   scroll occurs when the user scrolls in the specified element. 
 
+- An example of a keydown event will be as follows. Adding a event to id name then displaying  the value of the name field to the id msg div.
+
+```
+$("#name").keydown(function){
+  $("#msg").html($("#name").val());
+});
+
+```
+
+- another way to handle events in jQuery is by using the ```on()```method. This makes it so you can add multiple events to one event handler.
+
+
+```
+$("p").on("click",Function(){
+  alert("clicked");
+});
+
+```
+
+- You can remove event handlers using the off method
+
+```
+$("div").on*("click", function(){
+  alert("Hi there!");
+  $("div").off("click");
+});
+
+```
+
+
+- every event handling function can receive an event object, which contains properties and methods related to the event, such as the mouse position, type, which, data, target, preventdefault.
+
+```
+$("a").click(function(event){
+  alert(event.pageX);
+event.preventDefault();
+}):
+
+```
+
+## Trigger Events
+
+- you can programmatically trigger events using the ```trigger()```.
+
+```
+$("div").trigger("click");
+```
+
+- this is an example of making a todo list. We first handle the click event for the button. We select the value for the input field and reassign it to a newly created li element. The we take the input value and check if it is empty... in not then create new li, add a button for removing, append the new li to the list div lastley clear the input. the last bit of code is handling the 
+
+```
+
+$(function()){
+  $("#add").on("click,function(){
+    var val = $("input).val();
+
+    if(val !== ''){
+      var elem = $("<li></li>").text(val);
+      $(elem).append("<button class='rem'>X</button>");
+      $("#mylist").apppend(elem);
+      $("input").val("");
+
+      $(".rem").on("click", function(){
+        $(this).parent().remove();
+      });
+    }
+  });
+});
+
+```
+
+
+
+
+## Hide/Show
+
+- jQuery has come easy-t0-implement effects to create animations
+
+- the ```hide()``` and ```show()``` methods are used to hide and show the selected elements. or you can use the ```toggle()``` method to toggle between hiding and showing
+
+
+```
+$(function(){
+  $("p").click(function(){
+    $("div").toggle(1000);
+  });
+});
+
+```
+
+- the fade in/out using ```fadeToggle(1000)```
+
+- ``` slideUp()``` and ```slideDown()``` are used to create a slideing effect on elements. ```slideToggle()```
+
+
+
+```
+$("div").animate({
+
+  width: '+=250px',
+
+  height: '+=250px'
+}, 1000);
+
+
+```

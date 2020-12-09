@@ -487,3 +487,15 @@ $("#item").click(function() {
 }); 
 
 ```
+
+## Paired Programming
+
+- Paired Programming commonly involves two roles. The Driver and the Navigator. The Driver is the programmer who is typing and the only one whose hands are on the keyboard. The Navigator uses their words to guide the Driver but does not type. 
+
+- Paired programming helps you with vocabulary Speaking, idea Reading, and writing code from scratch.
+
+- Pair programming touches on all four skills: developers explain out loud what the code should do, listen to others’ guidance, read code that others have written, and write code themselves.
+
+- when two people focus on the same code base, it is easier to catch mistakes
+
+- Often times, the developers in a pairing have different skill sets. If one programmer is more experienced in a certain skill, they can teach a student who is less familiar with that area.

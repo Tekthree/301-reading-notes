@@ -113,7 +113,6 @@ $(function() {
 
 });
 // alerts "www.sololearn.com"
-JSTry it Yourself
 
 ```
 

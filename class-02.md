@@ -7,7 +7,7 @@
 
 - jQuery lets you select css elements then do something with that element.
 
-- the jQuery object has many methods thatt you can use to work with elements you select.
+- the jQuery object has many methods that you can use to work with elements you select.
 
 - in jQuery you have the jQuery object followed by a ```.``` then the method and inside the method youll have the parameters.
 
@@ -145,6 +145,8 @@ $(function() {
  });
  
  ```
+
+ - whe a jQuery selection is made. the object that is created has a property called length, which will return the number of elements in the object.
 
 
 - ```text()``` sets or returns the text content of selected elements.

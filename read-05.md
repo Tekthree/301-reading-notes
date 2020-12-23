@@ -53,3 +53,10 @@ $ heroku open
 
 To avoid dyno sleeping, you can upgrade to a hobby or professional dyno type as described in the Dyno Types article. For example, if you migrate your app to a professional dyno, you can easily scale it by running a command telling Heroku to execute a specific number of dynos, each running your web process type.
 
+- to install dependencies 
+
+```
+$ npm install
+```
+
+- 

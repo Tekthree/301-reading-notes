@@ -6,6 +6,8 @@
 
 # Heroku
 
+- how to deploy an app, change its configuration, view logs, scale, and attach add-ons
+
 - install heroku
 
 ```
@@ -126,4 +128,75 @@ TIMES=2
 To set the config var on Heroku, execute the following:
 
 ```
+$ heroku config:set TIMES=2
+
+$ heroku config
+```
+
+## Adding Postgres and other database
+
+- The add-on marketplace has a large number of data stores, from Redis and MongoDB providers, to Postgres and MySQL.
+
+- add the database
+
+```
+$ heroku addons:create heroku-postgresql:hobby-dev
+
+
+$ heroku config
+```
+
+- to add postgress to your dependencies
+
+```
+$ npm install pg
+
+
+ "dependencies": {
+    "cool-ascii-faces": "^1.3.4",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "pg": "^8.1.0"
+  },
+
+```
+
+
+- Now edit your index.js file to use this module to connect to the database specified in your DATABASE_URL environment variable. Add this near the top
+
+```
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+```
+
+- Now add another route, /db, by adding the following just after the existing .get('/', ...)
+
+
+```
+.get('/db', async (req, res) => {
+    try {
+      const client = await pool.connect();
+      const result = await client.query('SELECT * FROM test_table');
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/db', results );
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+  
+  ```
+  
+  - use the heroku pg:psql command to connect to the remote database, create a table and insert a row:
+  
+  ```
+  $ heroku pg:psql
+  ```
+  
 

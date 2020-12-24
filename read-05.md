@@ -53,10 +53,77 @@ $ heroku open
 
 To avoid dyno sleeping, you can upgrade to a hobby or professional dyno type as described in the Dyno Types article. For example, if you migrate your app to a professional dyno, you can easily scale it by running a command telling Heroku to execute a specific number of dynos, each running your web process type.
 
-- to install dependencies 
+- to install dependencies Run this command in your local directory to install the dependencies, preparing your system for running the app locally:
 
 ```
 $ npm install
 ```
 
-- 
+- you can now run your app locally with this command, then open browser and go to localhost:PORT
+
+```
+$heroku local web
+```
+
+# Push Local Changes
+
+- how to push to heroku
+
+```
+
+$ git add .
+
+$ git commit -m "add cool face api"
+
+$ git push heroku main
+
+$ heroku open cool
+
+```
+
+- Provisions and add-ons
+
+- Add-ons are third-party cloud services that provide out-of-the-box additional services for your application, from persistence through logging to monitoring and more.
+
+```
+$ heroku addons:create papertrail
+```
+
+- to list addons
+
+```
+$ heroku addons
+```
+
+- Define config vars : Heroku lets you externalize configuration - storing data such as encryption keys or external resource addresses in config vars.
+
+- In the index.js, Under the existing get() call, add another:
+
+```
+.get('/times', (req, res) => res.send(showTimes()))
+```
+
+- At the end of the file, add the following definition for the new function
+
+```
+showTimes = () => {
+  let result = '';
+  const times = process.env.TIMES || 5;
+  for (i = 0; i < times; i++) {
+    result += i + ' ';
+  }
+  return result;
+}
+```
+- heroku local will automatically set up the environment based on the contents of the .env file in your local directory. In the top-level directory of your project, there is already a .env file that has the following contents:
+
+```
+TIMES=2
+```
+
+- If you run the app with heroku local, you’ll see two numbers will be generated every time.
+
+To set the config var on Heroku, execute the following:
+
+```
+

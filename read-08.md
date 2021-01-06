@@ -31,5 +31,20 @@ FROM mytable;
 ```
 would select all query from all columns
 
+to run constraints, use
 
+```
+SELECT title, year FROM movies WHERE year < 2000 OR year > 2010;
+```
+
+- When using the WHERE clause , SQL supports many useful operators to do things like case-insensitive string comparison and matching.
+
+- All strings must be quoted so that the query parser can distinguish words in the string from SQL keywords.
+
+- 
+
+```
+SELECT title, director FROM movies
+WHERE director != "John Lasseter";
+```
 
